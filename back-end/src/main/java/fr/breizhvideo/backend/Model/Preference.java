@@ -2,10 +2,7 @@ package fr.breizhvideo.backend.Model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public @Data class Preference {
@@ -15,4 +12,9 @@ public @Data class Preference {
     private int id;
 
     private int vote;
+
+    @ManyToOne @JoinColumn
+    private Representation representations;
+    @ManyToOne @JoinColumn
+    private Film films;
 }

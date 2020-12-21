@@ -3,19 +3,16 @@ package fr.breizhvideo.backend.Model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-public @Data class Actor {
+public @Data class Representation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String firstName;
-    private String lastName;
+    private String release_date;
 
-    @ManyToMany(mappedBy = "actors")
-    private List<Film> filmList;
-
+    @ManyToOne @JoinColumn
+    private Village village;
 }

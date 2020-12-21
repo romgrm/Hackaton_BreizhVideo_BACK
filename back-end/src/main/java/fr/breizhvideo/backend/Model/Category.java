@@ -2,10 +2,8 @@ package fr.breizhvideo.backend.Model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public @Data class Category {
@@ -15,4 +13,7 @@ public @Data class Category {
     private int id;
 
     private String name;
+
+    @ManyToMany(mappedBy = "category")
+    private List<Film> filmList;
 }
