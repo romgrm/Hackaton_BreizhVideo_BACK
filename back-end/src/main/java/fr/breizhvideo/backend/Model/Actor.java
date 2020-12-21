@@ -1,5 +1,6 @@
 package fr.breizhvideo.backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ public @Data class Actor {
     private String lastName;
 
     @ManyToMany(mappedBy = "actors")
+    @JsonBackReference
     private List<Film> filmList;
 
 }

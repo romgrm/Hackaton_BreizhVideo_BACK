@@ -1,5 +1,6 @@
 package fr.breizhvideo.backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public @Data class Film {
             joinColumns = @JoinColumn(name = "film_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
+    @JsonManagedReference
     List<Category> category;
 
     @ManyToMany
@@ -29,5 +31,6 @@ public @Data class Film {
                 joinColumns = @JoinColumn(name = "film_id"),
                 inverseJoinColumns = @JoinColumn(name = "actor_id")
     )
+    @JsonManagedReference
     List<Actor> actors;
 }
