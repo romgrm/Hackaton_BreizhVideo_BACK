@@ -1,7 +1,6 @@
 package fr.breizhvideo.backend.Controller;
 
 import fr.breizhvideo.backend.Model.Preference;
-import fr.breizhvideo.backend.Model.Representation;
 import fr.breizhvideo.backend.Repository.PreferenceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

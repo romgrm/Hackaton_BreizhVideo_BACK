@@ -18,6 +18,7 @@ public @Data class Film {
     private int releaseYear;
     private int length;
 
+    // relation avec Category table dans Bdd
     @ManyToMany
     @JoinTable(name = "film_category",
             joinColumns = @JoinColumn(name = "film_id"),
@@ -26,6 +27,7 @@ public @Data class Film {
     @JsonManagedReference
     List<Category> category;
 
+    // relation avec Actor table dans Bdd
     @ManyToMany
     @JoinTable(name = "film_actor",
                 joinColumns = @JoinColumn(name = "film_id"),

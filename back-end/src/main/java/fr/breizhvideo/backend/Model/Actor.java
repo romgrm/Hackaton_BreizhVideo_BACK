@@ -16,6 +16,7 @@ public @Data class Actor {
     private String firstName;
     private String lastName;
 
+    // relation avec Film table dans Bdd
     @ManyToMany(mappedBy = "actors")
     @JsonBackReference
     private List<Film> filmList;
